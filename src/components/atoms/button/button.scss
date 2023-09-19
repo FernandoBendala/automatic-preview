@@ -1,0 +1,62 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.button {
+    @include m.flex($ai: center, $jc: center);
+    width: 100%;
+    padding: f.em(16);
+    border: none;
+    border-radius: f.em(12);
+
+    color: $color-white;
+    background-color: $color-primary;
+
+    font-size: f.em(18);
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: $transition;
+
+    // Text
+    &__text {
+        margin-right: f.em(8);
+
+        transition: $transition;
+    }
+
+    // Icon
+    &__icon {
+        width: f.em(20);
+        height: f.em(20);
+
+        transition: $transition;
+    }
+
+    // Disabled
+    &.disabled {
+        opacity: 0.4;
+
+        cursor: not-allowed;
+    }
+
+    // Hover
+    &:hover:not(.disabled) {
+        box-shadow: inset $box-shadow;
+
+        background-color: darken($color-primary, 16%);
+    }
+
+    // Secondary
+    &--secondary {
+        color: $color-secondary;
+        background-color: transparent;
+
+        border: solid f.em(2) $color-secondary;
+
+        &:hover:not(.disabled) {
+            background-color: $color-gray--light;
+        }
+    }
+}

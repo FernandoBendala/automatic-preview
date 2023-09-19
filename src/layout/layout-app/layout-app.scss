@@ -1,0 +1,56 @@
+@use "../../assets/sass/functions.scss" as f;
+@use "../../assets/sass/mixins.scss" as m;
+@use "../../assets/sass/variables.scss" as *;
+
+.layout-aside {
+    @include m.position(relative);
+    @include m.flex($fd: column, $ai: center, $gap: f.em(16));
+
+    height: 100%;
+    padding: f.em(96) f.em(32) f.em(32);
+
+    background-color: $color-gray;
+
+    overflow: auto;
+
+    // Back button
+    &__back {
+        @include m.position(absolute, $t: f.em(32), $l: f.em(32), $r: 0);
+        @include m.flex($ai: center);
+
+        text-decoration: none;
+        transition: $transition;
+        z-index: 1;
+
+        &__image {
+            width: f.em(32);
+            height: f.em(32);
+        }
+
+        &__text {
+            margin-left: f.em(8);
+
+            color: $color-secondary;
+
+            font-size: f.em(18);
+            font-weight: 700;
+        }
+
+        &:hover {
+            opacity: 0.48;
+        }
+    }
+
+    // Title
+    &__title {
+        width: 100%;
+        margin-bottom: f.em(8);
+
+        color: $color-secondary;
+
+        font-family: $font-family--secondary;
+        font-size: f.em(24);
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}

@@ -1,0 +1,102 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.images-upload {
+    &__container {
+        @include m.flex($ai: center, $fw: wrap, $gap: f.em(8));
+    }
+
+    &__figure {
+        @include m.flex($ai: center);
+        @include m.position(relative);
+
+        cursor: grab;
+        transition: $transition;
+
+        // Components
+        &__caption {
+            @include m.position(absolute, $b: calc(100% - #{f.em(28)}), $l: calc(100% - #{f.em(28)}));
+            @include m.flex($ai: center, $jc: center);
+
+            width: f.em(24);
+            height: f.em(24);
+            border: solid f.em(1) $color-white;
+            border-radius: f.em(16);
+
+            background-color: $color-black;
+            color: $color-white;
+
+            font-size: f.em(14);
+
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+
+            .images-upload__remove {
+                @include m.position(absolute);
+
+                width: f.em(14);
+                opacity: 0;
+
+                transition: $transition;
+                z-index: 1;
+            }
+            .images-upload__info {
+                @include m.position(absolute);
+
+                opacity: 1;
+
+                font-size: f.em(12);
+
+                transition: $transition;
+            }
+        }
+
+        &__preview {
+            height: f.em(64);
+            width: f.em(64);
+            border: solid f.em(1) $color-secondary;
+            border-radius: f.em(6);
+
+            object-fit: cover;
+            object-position: center;
+
+            transition: $transition, border 0.16s;
+        }
+
+        // Actions
+        &--drag-over {
+            border: dashed f.em(3) $color-gray--light;
+        }
+
+        // Behaviour
+        &:before {
+            @include m.position(absolute, $l: 100%);
+            opacity: 0;
+
+            content: "";
+            transition: $transition;
+        }
+
+        &:hover {
+            .images-upload__remove {
+                opacity: 1;
+            }
+            .images-upload__info {
+                opacity: 0;
+            }
+            + .images-upload__figure__preview {
+                opacity: 0.64;
+            }
+        }
+    }
+
+    &__no-results {
+        @include m.flex-child($fg: 2);
+
+        color: $color-gray--dark;
+
+        text-align: center;
+    }
+}

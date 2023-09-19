@@ -1,0 +1,25 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.input {
+    @include m.placeholder(rgba($color-secondary, 0.4));
+
+    width: 100%;
+    height: f.em(40);
+    padding: f.em(12) f.em(16);
+    border: solid f.em(1) $color-secondary;
+    border-radius: f.em(8);
+
+    color: $color-secondary;
+
+    font-family: $font-family;
+    font-size: f.em(16);
+
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow--dark;
+    }
+}

@@ -1,0 +1,46 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.modal {
+    border-radius: f.em(16);
+
+    padding: f.em(24);
+
+    color: $color-gray--dark;
+    background-color: $color-gray;
+
+    &__container {
+        @include m.position(fixed, $t: 0, $r: 0, $b: 0, $l: 0);
+        @include m.flex($ai: center, $jc: center);
+
+        background-color: rgba($color-black, 0.48);
+
+        z-index: 9;
+    }
+
+    &__title {
+        font-family: $font-family--secondary;
+        font-size: f.em(32);
+        font-weight: 800;
+    }
+
+    &__text {
+        font-size: f.em(18);
+    }
+
+    &__list {
+        @include m.flex($fd: column, $gap: f.em(8));
+
+        margin: f.em(24) 0 f.em(8);
+        &__item {
+            @include m.flex($ai: center, $gap: f.em(8));
+        }
+    }
+
+    &__buttons {
+        @include m.grid($gc: repeat(2, minmax(0, 1fr)), $gap: f.em(24));
+
+        margin-top: f.em(24);
+    }
+}

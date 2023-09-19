@@ -1,0 +1,42 @@
+@use "../../assets/sass/functions.scss" as f;
+@use "../../assets/sass/mixins.scss" as m;
+@use "../../assets/sass/variables.scss" as *;
+
+.domination {
+    &__subtitle {
+        margin-bottom: f.em(12);
+
+        color: $color-gray--light;
+
+        &:not(:nth-of-type(1)) {
+            margin-top: f.em(16);
+        }
+    }
+
+    &__aside-section__last {
+        @include m.position(sticky, $b: 0, $l: 0, $r: 0);
+
+        width: 100%;
+        padding: f.em(24) 0 0;
+        box-shadow: f.em(120) 0 0 $color-gray, f.em(-120) 0 0 $color-gray, 0 f.em(32) 0 f.em(4) $color-gray;
+
+        background: linear-gradient(to top, $color-gray 72%, transparent);
+
+        z-index: 1;
+    }
+
+    &__info {
+        @include m.position(absolute, $t: f.em(24), $r: f.em(24));
+
+        border: none;
+
+        background-color: transparent;
+
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            opacity: 0.48;
+        }
+    }
+}

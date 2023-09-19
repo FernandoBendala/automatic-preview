@@ -1,0 +1,10 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.clock {
+    color: $color-secondary;
+    
+    font-size: f.em(15);
+    font-weight: 600;
+}

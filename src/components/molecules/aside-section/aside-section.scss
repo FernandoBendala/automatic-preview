@@ -1,0 +1,39 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.aside-section {
+    @include m.grid-child($as: center);
+
+    width: 100%;
+    padding: f.em(12);
+    border-radius: f.em(8);
+
+    background-color: $color-white;
+
+    &__title {
+        @include m.flex($ai: center);
+
+        margin-bottom: f.em(16);
+
+        font-size: f.em(16);
+
+        &__icon {
+            width: f.em(16);
+        }
+        &__text {
+            margin-left: f.em(8);
+        }
+    }
+    &__actions {
+        
+        > section {
+            @include m.grid($gc: minmax(0, 1.12fr) minmax(0, 1fr), $gap: f.em(16));
+        }
+    }
+
+    // Auto bottom margin for last aside section
+    &:last-child {
+        margin-bottom: auto;
+    }
+}

@@ -1,0 +1,75 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.mobile {
+    @include m.flex($fd: column, $jc: space-between);
+
+    width: f.em(392);
+    height: f.em(812);
+    border: solid f.em(16) $color-gray--light;
+    border-radius: f.em(28);
+    box-shadow: $box-shadow;
+
+    background-color: $color-white;
+
+    z-index: 1;
+
+    // header
+    &__header {
+        @include m.flex($fd: column);
+
+        height: f.em(232);
+
+        overflow: hidden;
+        pointer-events: none;
+
+        &__status {
+            @include m.position(relative);
+            @include m.flex($jc: center, $ai: center);
+
+            margin: 0;
+
+            .status {
+                &__bar {
+                    height: f.em(40);
+                }
+
+                &__hour {
+                    @include m.position(absolute, $t: f.em(9.25), $l: f.em(20));
+
+                    font-family: $font-family--mobile-clock;
+                }
+            }
+        }
+    }
+
+    // content
+    &__content {
+        display: contents;
+        width: 100%;
+        height: 100%;
+
+        background-color: $color-secondary;
+
+        border-radius: 0 0 f.em(28) f.em(28);
+
+        overflow: hidden;
+    }
+
+    // footer
+    &__footer {
+        @include m.flex($fd: column);
+
+        height: f.em(200);
+        border-radius: 0 0 f.em(28) f.em(28);
+
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    // Selection
+    *::selection {
+        background-color: transparent;
+    }
+}

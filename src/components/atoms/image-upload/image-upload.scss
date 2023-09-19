@@ -1,0 +1,47 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.image-upload {
+    @include m.flex($ai: center, $jc: center);
+
+    width: f.em(64);
+    min-width: f.em(64);
+    height: f.em(64);
+    min-height: f.em(64);
+    padding: f.em(2);
+    border: solid f.em(1) $color-secondary;
+    border-radius: f.em(8);
+
+    background-color: $color-gray;
+
+    overflow: hidden;
+    transition: $transition;
+    cursor: pointer;
+
+    &__input {
+        display: none;
+    }
+    &__image {
+        height: 100%;
+        border-radius: f.em(6);
+
+        object-fit: contain;
+        object-position: center;
+
+        transition: $transition;
+
+        &.icon-plus {
+            width: f.em(16);
+            height: f.em(16);
+        }
+    }
+    &:hover {
+        box-shadow: $box-shadow--dark;
+        .image-upload {
+            &__image {
+                opacity: 0.64;
+            }
+        }
+    }
+}

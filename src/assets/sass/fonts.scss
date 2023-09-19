@@ -1,0 +1,50 @@
+@use "mixins" as m;
+
+// Inter
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-Black", 900, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-ExtraBold", 800, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-Bold", 700, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-SemiBold", 600, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-Medium", 500, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-Regular", 400, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-Light", 300, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-ExtraLight", 200, normal, woff2 woff);
+@include m.font-face("Inter", "assets/fonts/Inter/Inter-Thin", 100, normal, woff2 woff);
+
+// Nunito
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-Black", 900, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-BlackItalic", 900, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-ExtraBold", 800, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-ExtraBoldItalic", 800, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-Bold", 700, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-BoldItalic", 700, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-SemiBold", 600, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-SemiBoldItalic", 600, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-Medium", 500, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-MediumItalic", 500, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-Regular", 400, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-Italic", 400, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-Light", 300, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-LightItalic", 300, italic, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-ExtraLight", 200, normal, woff2 woff);
+@include m.font-face("Nunito", "assets/fonts/Nunito/Nunito-ExtraLightItalic", 200, italic, woff2 woff);
+
+// Nunito
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Black", 900, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-BlackItalic", 900, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-ExtraBold", 800, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-ExtraBoldItalic", 800, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Bold", 700, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-BoldItalic", 700, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-SemiBold", 600, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-SemiBoldItalic", 600, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Medium", 500, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-MediumItalic", 500, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Regular", 400, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Italic", 400, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Light", 300, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-LightItalic", 300, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-ExtraLight", 200, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-ExtraLightItalic", 200, italic, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Thin", 100, normal, woff2 woff);
+@include m.font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-ThinItalic", 100, italic, woff2 woff);

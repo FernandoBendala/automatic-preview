@@ -1,0 +1,72 @@
+@use "../../assets/sass/functions.scss" as f;
+@use "../../assets/sass/mixins.scss" as m;
+@use "../../assets/sass/variables.scss" as *;
+
+.home {
+    // Aside
+    &-aside {
+        @include m.flex($fd: column, $jc: center);
+        @include m.grid-child($as: center);
+
+        width: 100%;
+        height: 100%;
+
+        // Title
+        &__title {
+            padding: 0;
+            margin: 0 0 f.em(16);
+
+            font-size: f.em(32);
+            font-family: $font-family--secondary;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        // Button
+        &__button {
+            @include m.flex($ai: center, $jc: center);
+            width: 100%;
+            padding: f.em(16);
+            border: none;
+            border-radius: f.em(12);
+
+            color: $color-white;
+            background-color: $color-primary;
+
+            font-size: f.em(18);
+            font-weight: 600;
+            text-decoration: none;
+
+            cursor: pointer;
+            transition: $transition;
+
+            // Text
+            &__text {
+                margin-right: f.em(8);
+
+                transition: $transition;
+            }
+
+            // Icon
+            &__icon {
+                width: f.em(20);
+                height: f.em(20);
+            }
+
+            // Disabled
+            &.disabled {
+                opacity: 0.4;
+
+                cursor: not-allowed;
+            }
+
+            // Hover
+            &:hover:not(.disabled) {
+                box-shadow: inset $box-shadow;
+
+                background-color: darken($color-primary, 16%);
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.domination-template {
+    @include m.flex($fd: column, $ai: center, $gap: f.em(8));
+
+    height: 100%;
+    padding: f.em(24);
+
+    &__brand-logo {
+        width: 100%;
+        height: f.em(32);
+        object-fit: contain;
+        object-position: center;
+    }
+
+    &__title {
+        font-weight: 800;
+
+        cursor: default;
+    }
+
+    &__ads-images {
+        width: 100%;
+        height: f.em(328);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__button {
+        width: 100%;
+        height: f.em(48);
+        padding: f.em(8);
+        margin-top: f.em(8);
+        border: none;
+        border-radius: f.em(8);
+
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    &__slides {
+        @include m.flex($ai: center, $jc: center, $gap: f.em(8));
+
+        &__slide {
+            display: block;
+            min-width: f.em(8);
+            min-height: f.em(8);
+            margin-top: f.em(8);
+            border-radius: f.em(8);
+
+            background-color: $color-secondary;
+        }
+    }
+
+    div[role="presentation"] {
+        transform: translateX(0);
+    }
+}

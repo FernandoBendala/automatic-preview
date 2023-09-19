@@ -1,0 +1,40 @@
+@use "../../assets/sass/functions.scss" as f;
+@use "../../assets/sass/mixins.scss" as m;
+@use "../../assets/sass/variables.scss" as *;
+@use "../../assets/sass/keyframes.scss" as *;
+
+.main {
+    @include m.position(relative);
+    @include m.flex($ai: center, $jc: center);
+
+    height: 100vh;
+
+    background-color: $color-secondary;
+
+    overflow: hidden;
+
+    // Loading
+    &__loading {
+        @include m.position(absolute, $t: 0, $l: 0, $b: 0, $r: 0);
+        @include m.flex($ai: center, $jc: center);
+
+        background-color: rgba($color-black, 0.88);
+
+        transition: $transition;
+        z-index: 9;
+
+        img {
+            opacity: 0;
+
+            animation: phantomLoading 4s infinite;
+            filter: drop-shadow(0 #{f.em(4)} #{f.em(8)} $color-black);
+        }
+    }
+
+    // Watermark
+    &__watermark {
+        @include m.position(absolute, $b: f.em(32), $r: f.em(32));
+
+        pointer-events: none;
+    }
+}

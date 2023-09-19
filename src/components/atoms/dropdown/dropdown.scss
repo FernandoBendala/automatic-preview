@@ -1,0 +1,104 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.dropdown {
+    @include m.position(relative);
+    width: 100%;
+
+    z-index: 8;
+
+    // Button
+    &__button {
+        @include m.flex($ai: center, $jc: flex-start);
+
+        width: 100%;
+        padding: f.em(16);
+        margin-bottom: f.em(32);
+        border: none;
+        border-radius: f.em(12);
+
+        background-color: $color-white;
+
+        cursor: pointer;
+        transition: $transition;
+
+        .button {
+            // Icon
+            &__icon {
+                width: f.em(24);
+                height: f.em(24);
+
+                &:last-of-type {
+                    margin-left: auto;
+                }
+            }
+
+            // Text
+            &__text {
+                margin-left: f.em(12);
+
+                font-weight: 500;
+            }
+        }
+
+        // Hover
+        &:hover {
+            box-shadow: $box-shadow;
+        }
+    }
+
+    // List
+    &__list {
+        @include m.position(absolute, $t: f.em(64), $l: 0, $r: 0);
+
+        padding: 0;
+        border-radius: f.em(12);
+        box-shadow: $box-shadow;
+
+        background-color: $color-white;
+
+        list-style: none;
+        overflow: hidden;
+
+        .list {
+            &__item {
+                @include m.flex($ai: center, $jc: flex-start);
+
+                padding: f.em(16) f.em(24);
+
+                color: $color-black;
+
+                font-size: f.em(14);
+                font-weight: 500;
+                text-decoration: none;
+
+                cursor: pointer;
+                transition: $transition;
+
+                &__icon {
+                    width: 0;
+
+                    transition: $transition;
+                }
+
+                &:hover {
+                    color: $color-primary;
+                    background-color: lighten($color-primary, 44%);
+
+                    .list__item {
+                        &__icon {
+                            width: f.em(12);
+                            margin-right: f.em(8);
+                        }
+                    }
+                }
+            }
+
+            // Add border bottom to list
+            &:not(:last-child) {
+                border-bottom: solid f.em(1) $color-gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use "../../../assets/sass/functions.scss" as f;
+@use "../../../assets/sass/mixins.scss" as m;
+@use "../../../assets/sass/variables.scss" as *;
+
+.image-slider {
+    @include m.position(relative);
+
+    width: f.em(312);
+    height: f.em(312);
+
+    &__container {
+        overflow: hidden;
+    }
+
+    &__slide {
+        &__image {
+            width: f.em(312);
+            height: f.em(312);
+            object-fit: cover;
+        }
+    }
+
+    &__button {
+        @include m.position(absolute, $t: 50%);
+
+        border: none;
+        transform: translateY(-50%);
+
+        background-color: transparent;
+
+        transition: $transition;
+
+        &--back {
+            @include m.position(absolute, $l: f.em(-232));
+        }
+        &--next {
+            @include m.position(absolute, $r: f.em(-232));
+        }
+
+        &:hover:not(:disabled) {
+            opacity: 0.48;
+
+            cursor: pointer;
+        }
+
+        &:disabled {
+            opacity: 0;
+        }
+    }
+}
